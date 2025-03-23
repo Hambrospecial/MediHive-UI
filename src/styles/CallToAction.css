@@ -1,0 +1,39 @@
+.cta {
+  background: #2c3e50;
+  text-align: center;
+  padding: 60px 20px;
+  color: white;
+}
+
+.cta-btn {
+  background: #2c3e50;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: #1a252f;
+}
+
+.login-btn {
+  background: white;
+  color: #2c3e50;
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.login-btn:hover {
+  background: #f4f4f4;
+}
