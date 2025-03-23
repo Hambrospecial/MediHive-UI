@@ -9,6 +9,8 @@ import SignUpPage from "../sign_up_page/SignUpPage";
 import "../../styles/general.css";
 import LoginPage from "../login_page/LoginPage";
 import AboutPage from "../about_page/AboutPage";
+import ContactPage from "../contact_page/ContactPage";
+import FeaturesPage from "../feature_page/FeaturesPage";
 
 function LandingPage() {
   return (
@@ -29,6 +31,8 @@ function LandingPage() {
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/about" element={<AboutPage />}/>
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/features" element={<FeaturesPage />} />
         </Routes>
         <Footer />
       </div>

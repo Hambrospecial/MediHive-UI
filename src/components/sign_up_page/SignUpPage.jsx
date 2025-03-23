@@ -13,6 +13,8 @@ const SignUpPage = () => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
+    otherName: "",
+    username: "",
     email: "",
     phoneNumber: "",
     role: "",
@@ -76,27 +78,28 @@ const SignUpPage = () => {
     const newErrors = {};
 
     if (step === 1) {
-      if (!formData.firstName) newErrors.firstName = "* First name is required.";
-      if (!formData.lastName) newErrors.lastName = "* Last name is required.";
-      if (!formData.email) newErrors.email = "* Email is required.";
-      if (!formData.phoneNumber) newErrors.phoneNumber = "* Phone number is required.";
-      if (!formData.role) newErrors.role = "* Role is required.";
+      if (!formData.firstName) newErrors.firstName = "First name is required.";
+      if (!formData.lastName) newErrors.lastName = "Last name is required.";
+      if (!formData.email) newErrors.email = "Email is required.";
+      if (!formData.username) newErrors.username = "Username is required.";
+      if (!formData.phoneNumber) newErrors.phoneNumber = "Phone number is required.";
+      if (!formData.role) newErrors.role = "Role is required.";
     }
 
     if (step === 2 && formData.role === "patient") {
-      if (!formData.dateOfBirth) newErrors.dateOfBirth = "* Date of birth is required.";
-      if (!formData.gender) newErrors.gender = "* Gender is required.";
-      if (!formData.emergencyContactName) newErrors.emergencyContactName = "* Emergency contact name is required.";
-      if (!formData.emergencyContactPhone) newErrors.emergencyContactPhone = "* Emergency contact phone is required.";
+      if (!formData.dateOfBirth) newErrors.dateOfBirth = "Date of birth is required.";
+      if (!formData.gender) newErrors.gender = "Gender is required.";
+      if (!formData.emergencyContactName) newErrors.emergencyContactName = "Emergency contact name is required.";
+      if (!formData.emergencyContactPhone) newErrors.emergencyContactPhone = "Emergency contact phone is required.";
     }
 
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0; // Return true if no errors
+    return Object.keys(newErrors).length === 0;
   };
 
   // Validate entire form
   const validateForm = () => {
-    return validateStep(); // Validate the current step before submission
+    return validateStep();
   };
 
   return (
@@ -112,6 +115,16 @@ const SignUpPage = () => {
           {/* Step 2: Role-Specific Information */}
           {step === 2 && formData.role === "patient" && (
             <PatientInfo formData={formData} handleChange={handleChange} errors={errors} />
+          )}
+
+          {/* Step 2: Role-Specific Information */}
+          {step === 2 && formData.role === "doctor" && (
+            <DoctorInfo formData={formData} handleChange={handleChange} errors={errors} />
+          )}
+
+          {/* Step 2: Role-Specific Information */}
+          {step === 2 && formData.role === "pharmacist" && (
+            <PharmacistInfo formData={formData} handleChange={handleChange} errors={errors} />
           )}
 
           {/* Navigation Buttons */}

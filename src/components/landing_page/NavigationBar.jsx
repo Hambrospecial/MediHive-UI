@@ -14,7 +14,7 @@ const NavigationBar = () => {
       </div>
       <ul className="nav-links">
         <li>
-          <Link to="/#features">
+          <Link to="/features">
             <FaInfoCircle className="nav-icon" /> Features
           </Link>
         </li>
@@ -24,7 +24,7 @@ const NavigationBar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/#contact">
+          <Link to="/contact">
             <FaEnvelope className="nav-icon" /> Contact
           </Link>
         </li>

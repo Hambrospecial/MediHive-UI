@@ -33,6 +33,34 @@ const GeneralInfo = ({ formData, handleChange, errors }) => {
         {errors.lastName && <span className="error">{errors.lastName}</span>}
       </div>
       <div className="form-group">
+        <label htmlFor="otherName">
+          <FaUser /> Other Name
+        </label>
+        <input
+          type="text"
+          id="otherName"
+          name="otherName"
+          value={formData.otherName}
+          onChange={handleChange}
+          required
+        />
+        {errors.otherName && <span className="error">{errors.otherName}</span>}
+      </div>
+      <div className="form-group">
+        <label htmlFor="username">
+          <FaUser /> Username
+        </label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          value={formData.username}
+          onChange={handleChange}
+          required
+        />
+        {errors.username && <span className="error">{errors.username}</span>}
+      </div>
+      <div className="form-group">
         <label htmlFor="email">
           <FaEnvelope /> Email
         </label>
