@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/NavigationBar.css";
-import logoIcon from "../../assets/medihiveLogo.webp";
+import logoIcon from "../../assets/medihiveLogo2.webp";
 import { FaUser, FaInfoCircle, FaEnvelope, FaSignInAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -19,7 +19,7 @@ const NavigationBar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/#about">
+          <Link to="/about">
             <FaUser className="nav-icon" /> About
           </Link>
         </li>
